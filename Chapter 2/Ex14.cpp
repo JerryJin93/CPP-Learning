@@ -1,10 +1,12 @@
 #include <iostream>
 #include <cstdlib>
+
 using namespace std;
 
 /*
-	在你的计算机平台上用C++程序计算表达式(x+1)*(++x)+(x++)
+	在你的计算机平台上用C++程序计算表达式(x+1)*(++x)+(x++)。（假设x的初值为1。）
 */
+
 int main()
 {
 	int expression;
