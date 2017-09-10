@@ -28,13 +28,20 @@ class LinkedList
 			head -> data = NULL;
 		}
 
-		/*~LinkedList()
+		~LinkedList(){}
+
+		void createLinkedListbySize(int size)
 		{
-			for(int i = 1; i <= getLength(); i++)
+			stretchLinkedListbySize(size);
+		}
+
+		void stretchLinkedListbySize(int length)
+		{
+			while(length--)
 			{
-				delete getNode(i);
+				insertAtTail(NULL);
 			}
-		}*/
+		}
 
 		void insertAtTail(T data)
 		{
@@ -53,16 +60,24 @@ class LinkedList
 			node -> next = NULL;
 		}
 
-		void insertArray(T data[])
+		void insertArray(T data[], int length)
 		{
-			Node<T> *node = new Node<T>;
+			for(int i = 0; i < length; i++)
+			{
+				insertAtTail(data[i]);
+			}
 		}
 
-		void insertAfter(T data, int position)
+		void insertAt(T data, int position)
 		{
 			Node<T> *p;
 			p = head;
 			
+			if(p -> next == NULL)
+			{
+				createLinkedListbySize(position);
+			}
+
 			for(int count = 0; count < position; count++)
 			{
 				if(p -> next != NULL)
