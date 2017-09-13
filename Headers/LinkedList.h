@@ -231,6 +231,46 @@ class LinkedList
 			return result;
 		}
 
+		LinkedList<T> inverse()
+		{
+			LinkedList<T> list;
+			for(int i = getLength(); i > 0; i--)
+			{
+				list.insertAtTail(getNode(i) -> data);
+			}
+			return list;
+		}
+
+		bool equals(LinkedList<T> list)
+		{
+			bool judge;
+			Node<T> *p, *q;
+			p = head;
+			q = list.head;
+			if(getLength() == list.getLength())
+			{
+				while(p -> next != NULL && q -> next != NULL)
+				{
+					p = p -> next;
+					q = q -> next;
+					if(p -> data != q -> data)
+					{
+						judge = false;
+						break;
+					}
+					else
+					{
+						judge = true;
+					}
+				}
+			}
+			else
+			{
+				judge = false;
+			}
+			return judge;
+		}
+
 		Node<T> *getNode(int position)
 		{
 			Node<T> *p;
